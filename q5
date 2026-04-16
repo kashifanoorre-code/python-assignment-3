@@ -1,0 +1,7 @@
+def count_char(s, char):
+    if not s:
+        return 0
+    count = 1 if s[0] == char else 0
+    return count + count_char(s[1:], char)
+
+print(count_char("mississippi", "s"))
