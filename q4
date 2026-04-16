@@ -1,0 +1,6 @@
+def product_list(lst):
+    if not lst:
+        return 1
+    return lst[0] * product_list(lst[1:])
+
+print(product_list([2, 4, 6]))
