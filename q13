@@ -1,0 +1,9 @@
+def is_num_palindrome(n, temp=None):
+    if temp is None: temp = n
+    if n == 0: return temp, True
+    res_val, res_bool = is_num_palindrome(n // 10, temp)
+    is_match = (n % 10) == (res_val % 10)
+    return res_val // 10, res_bool and is_match
+
+_, result = is_num_palindrome(12321)
+print(result)
