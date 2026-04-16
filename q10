@@ -1,0 +1,8 @@
+def get_power_set(s):
+    if not s:
+        return [[]]
+    elem = s[0]
+    subsets = get_power_set(s[1:])
+    return subsets + [[elem] + sub for sub in subsets]
+
+print(get_power_set([1, 2, 3]))
