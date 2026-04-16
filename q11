@@ -1,0 +1,10 @@
+def solve_n_queens(n, row=0, board=[]):
+    if row == n:
+        return [board]
+    solutions = []
+    for col in range(n):
+        if all(col != c and abs(row - r) != abs(col - c) for r, c in enumerate(board)):
+            solutions.extend(solve_n_queens(n, row + 1, board + [col]))
+    return solutions
+
+print(solve_n_queens(4))
